@@ -25,7 +25,7 @@ const app = express();
 // Add headers before the routes are defined
 app.use(
   cors({
-    origin: "https://hci-tube-fe.vercel.app/",
+    origin: "https://hci-tube-gejcl8jsg-tranmanhcuongqn.vercel.app",
     methods: ["POST", "GET", "PUT", "PATCH", "DELETE"],
     credentials: true,
   })
