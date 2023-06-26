@@ -36,7 +36,7 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Origin",
     "https://hci-tube-fe.vercel.app"
   );
-  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Credentials", "true");
   next();
 });
 
