@@ -42,6 +42,7 @@ exports.refreshAccessToken = catchAsync(async (req, res, next) => {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
+    domain: "https://hci-tube-fe.vercel.app",
     httpOnly: true,
   };
   if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
