@@ -31,8 +31,15 @@ app.use(
   })
 );
 
-res.setHeader("Access-Control-Allow-Origin", "https://hci-tube-fe.vercel.app");
-res.setHeader("Access-Control-Allow-Credentials", "true");
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://hci-tube-fe.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  next();
+});
+
 // Serving static files
 // 1) GLOBAL MIDDLEWARE
 // Set security HTTP headers
