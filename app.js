@@ -27,6 +27,8 @@ app.use(
   cors({
     origin: "https://hci-tube-fe.vercel.app",
     methods: ["POST", "GET", "PUT", "PATCH", "DELETE"],
+    AccessControlAllowOrigin: "https://hci-tube-fe.vercel.app",
+    AccessControlAllowCredentials: true,
     credentials: true,
   })
 );
