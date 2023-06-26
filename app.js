@@ -27,11 +27,12 @@ app.use(
   cors({
     origin: "https://hci-tube-fe.vercel.app",
     methods: ["POST", "GET", "PUT", "PATCH", "DELETE"],
-    AccessControlAllowOrigin: "https://hci-tube-fe.vercel.app",
-    AccessControlAllowCredentials: true,
     credentials: true,
   })
 );
+
+res.setHeader("Access-Control-Allow-Origin", "https://hci-tube-fe.vercel.app");
+res.setHeader("Access-Control-Allow-Credentials", "true");
 // Serving static files
 // 1) GLOBAL MIDDLEWARE
 // Set security HTTP headers
