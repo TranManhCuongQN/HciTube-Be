@@ -84,6 +84,7 @@ const createSendToken = async (channel, statusCode, res) => {
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
+    domain: "https://hci-tube-fe.vercel.app",
   };
   if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
 
@@ -248,6 +249,7 @@ exports.protect = catchAsync(async (req, res, next) => {
     res.cookie("jwt", "loggedout", {
       expires: new Date(Date.now() + 10 * 1000),
       httpOnly: true,
+      domain: "https://hci-tube-fe.vercel.app",
     });
     return next(new AppError("Tài khoản của bạn đang bị khóa", 403));
   }
@@ -420,6 +422,7 @@ exports.logout = (req, res) => {
   res.cookie("jwt", "loggedout", {
     expires: new Date(Date.now() + 10 * 1000),
     httpOnly: true,
+    domain: "https://hci-tube-fe.vercel.app",
   });
   return res.status(200).json({ status: "success" });
 };
